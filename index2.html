@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="initial-scale=0.8" />
+    <title>Login</title>
+    <link rel="Stylesheet" type="text/css" href="/static/sso.css" />
+    <script src="/static/jquery.min.js" type="text/javascript" nonce=abc123 charset="utf-8"></script>
+    <script src="/static/jquery.infieldlabel.min.js" type="text/javascript" nonce=abc123 charset="utf-8"></script>
+    <script nonce=abc123 type="text/javascript">
+    $(function() {
+        $("label").inFieldLabels();
+        if (navigator.userAgent.search("iPhone") != -1 || navigator.userAgent.search("iPad") != -1) {
+            $('input').css('padding', '1px');
+        }
+    });
+
+    function changeBackground(el, image) {
+        el.style.backgroundImage = "url('" + image + "')";
+    }
+    </script>
+</head>
+
+<body>
+    <div class="outside">
+        <div style="width:400px;" class="whitebox">
+            <table class="bigtable" cellspacing="0" style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td style="height:173px;">&nbsp;&nbsp;<img src="/static/ssoLogo.png" /></td>
+                </tr>
+                <tr>
+                    <td class="loginbox" style="height:150px; width:450px">
+                        <form method="GET" action="/logout">
+                            <table class="innertable" cellspacing="0" align="center" width="100%">
+                                <tr>
+                                    <td>
+                                        <img alt="Attention" src="static/int-warning.gif" height="16" width="16" style="vertical-align:top; margin-right:3px;" />
+                                        You are logged in as: <b>foouser</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height:15px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>Your session will expire in 10 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td style="height:15px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: inline; padding-bottom:50px; height:20px">
+                                            <div style="display: inline-block; float:middle; vertical-align: middle; padding-left:25px;">
+                                                <input class="signin-button" style="padding-left: 0.75em; padding-right: 0.75em; height: 2.1em; font-size: 11px; color: white; background-image: linear-gradient(#999999, #686868);" value="Sign Out" type="button" onclick="location.href='/logout'" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+                <script type="text/javascript" nonce=abc123>
+                </script>
+            </table>
+            <div style="width:315px; text-align:center; margin:15px 0px 30px 30px;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
